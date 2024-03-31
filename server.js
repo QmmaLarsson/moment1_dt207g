@@ -31,7 +31,7 @@ client.connect((err) => {
 //Routing
 app.get("/", async (req, res) => {
     //Läs ut från databasen
-    client.query("SELECT * FROM courses", (err, result) => {
+    client.query("SELECT * FROM courses ORDER BY id DESC", (err, result) => {
         if (err) {
             console.log("Fel vid db-fråga.")
         } else {
@@ -56,7 +56,34 @@ app.post("/", async (req, res) => {
     res.redirect("/");
 });
 
+//Radera sparad kurs
+app.get("/delete/:id", (req, res) => {
+    let id = req.params.id;
+
+    client.query("DELETE FROM courses WHERE id=$1;", [id] , (err) => {
+        if(err) {
+            console.log("Fel vid db-fråga.")
+        }
+
+        res.redirect("/");
+    });
+
+});
+
 //Starta servern
 app.listen(process.env.PORT, () => {
     console.log("Servern är startad på port: " + process.env.PORT);
+});
+
+//Routing för huvudmeny
+app.get("/", (req, res) => {
+    res.render("index");
+});
+
+app.get("/about", (req, res) => {
+    res.render("about");
+});
+
+app.get("/add", (req, res) => {
+    res.render("add");
 });

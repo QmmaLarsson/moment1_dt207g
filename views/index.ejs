@@ -9,7 +9,16 @@
 </head>
 
 <body>
-    <h1>Test</h1>
+
+<nav>
+    <ul>
+        <li><a href="/">Startsida</a></li>
+        <li><a href="/add">Ny kurs</a></li>
+        <li><a href="/about">Om</a></li>
+    </ul>
+</nav>
+
+    <h1>Kurser</h1>
 
     <form method="post" action="/" id="courseForm">
         <label for="courseCode"><strong>Kurskod:</strong></label>
@@ -38,10 +47,10 @@
 
     <h2>Sparade kurser</h2>
 
+    <% courses.forEach((course)=> { %>
     <ul>
-        <% courses.forEach((course)=> { %>
             <li>
-                Kurs-ID: <%= course.id %>
+                ID: <%= course.id %>
                 <br>
                 Kurskod: <%= course.coursecode %>
                 <br>
@@ -51,9 +60,10 @@
                 <br>
                 Progression: <%= course.courseprogression %>
                 <br><br>
-                <% }); %>
             </li>
+            <a href="/delete/<%= course.id %>">Radera kurs</a>
     </ul>
+    <% }); %>
 
 </body>
 
