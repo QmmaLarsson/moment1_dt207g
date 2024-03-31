@@ -42,7 +42,7 @@ app.get("/", async (req, res) => {
     });
 });
 
-app.post("/", async (req, res) => {
+app.post("/add", async (req, res) => {
     const coursecode = req.body.coursecode;
     const coursename = req.body.coursename;
     const courseurl = req.body.courseurl;

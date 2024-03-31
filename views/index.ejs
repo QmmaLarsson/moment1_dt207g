@@ -18,27 +18,25 @@
     </ul>
 </nav>
 
-    <h1>Kurser</h1>
-
-    <h2>Sparade kurser</h2>
-
+    <h1>kurser</h1>
+    
     <% courses.forEach((course)=> { %>
-    <ul>
-            <li>
-                ID: <%= course.id %>
-                <br>
-                Kurskod: <%= course.coursecode %>
-                <br>
-                Kursnamn: <%= course.coursename %>
-                <br>
-                URL: <a href="<%= course.courseurl %>"><%= course.courseurl %></a>
-                <br>
-                Progression: <%= course.courseprogression %>
-                <br><br>
-            </li>
-            <a href="/delete/<%= course.id %>">Radera kurs</a>
-    </ul>
-    <% }); %>
+        <ul>
+                <li>
+                    ID: <%= course.id %>
+                    <br>
+                    Kurskod: <%= course.coursecode %>
+                    <br>
+                    Kursnamn: <%= course.coursename %>
+                    <br>
+                    URL: <a href="<%= course.courseurl %>"><%= course.courseurl %></a>
+                    <br>
+                    Progression: <%= course.courseprogression %>
+                    <br><br>
+                </li>
+                <a href="/delete/<%= course.id %>">Radera kurs</a>
+        </ul>
+        <% }); %>
 
 </body>
 
