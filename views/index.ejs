@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startsida</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <h1>Test</h1>
+
+    <form method="post" action="/" id="courseForm">
+        <label for="courseCode"><strong>Kurskod:</strong></label>
+        <br>
+        <input type="text" id="courseCode" name="coursecode" required>
+        <br><br>
+        <label for="courseName"><strong>Kursnamn:</strong></label>
+        <br>
+        <input type="text" id="courseName" name="coursename" required>
+        <br><br>
+        <label for="courseUrl"><strong>URL till kursplan:</strong></label>
+        <br>
+        <input type="url" id="courseUrl" name="courseurl" required>
+        <br><br>
+        <label for="courseProgression"><strong>Progression:</strong></label>
+        <br>
+        <select id="courseProgression" name="courseprogression">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+        <br><br>
+        <button id="submit" type="submit">Spara kurs</button>
+        <button type="reset">Rensa formulär</button>
+    </form>
+
+    <h2>Sparade kurser</h2>
+
+    <ul>
+        <% courses.forEach((course)=> { %>
+            <li>
+                Kurs-ID: <%= course.id %>
+                <br>
+                Kurskod: <%= course.coursecode %>
+                <br>
+                Kursnamn: <%= course.coursename %>
+                <br>
+                URL: <a href="<%= course.courseurl %>"><%= course.courseurl %></a>
+                <br>
+                Progression: <%= course.courseprogression %>
+                <br><br>
+                <% }); %>
+            </li>
+    </ul>
+
+</body>
+
+</html>
