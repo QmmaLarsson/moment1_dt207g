@@ -10,33 +10,50 @@
 
 <body>
 
-<nav>
-    <ul>
-        <li><a href="/">Startsida</a></li>
-        <li><a href="/add">Ny kurs</a></li>
-        <li><a href="/about">Om</a></li>
-    </ul>
-</nav>
+    <header>
+        <nav>
+            <div id="float">
+                <a href="/">Startsida</a>
+                <a href="/add">Ny kurs</a>
+                <a href="/about">Om</a>
+            </div>
+        </nav>
+    </header>
 
-    <h1>kurser</h1>
-    
-    <% courses.forEach((course)=> { %>
-        <ul>
+    <main>
+        <h1>Kurser</h1>
+
+        <% courses.forEach((course)=> { %>
+            <ul>
                 <li>
-                    ID: <%= course.id %>
-                    <br>
-                    Kurskod: <%= course.coursecode %>
-                    <br>
-                    Kursnamn: <%= course.coursename %>
-                    <br>
-                    URL: <a href="<%= course.courseurl %>"><%= course.courseurl %></a>
-                    <br>
-                    Progression: <%= course.courseprogression %>
-                    <br><br>
+                    <b>ID:</b>
+                    <%= course.id %>
+                        <br>
+                        <b>Kurskod:</b>
+                        <%= course.coursecode %>
+                            <br>
+                            <b>Kursnamn:</b>
+                            <%= course.coursename %>
+                                <br>
+                                <b>URL:</b> <a href="<%= course.courseurl %>">
+                                    Länk till kurssidan
+                                </a>
+                                <br>
+                                <b>Progression:</b>
+                                <%= course.courseprogression %>
+                                    <br><br>
                 </li>
-                <a href="/delete/<%= course.id %>">Radera kurs</a>
-        </ul>
-        <% }); %>
+                <a class="deleteBtn" href="/delete/<%= course.id %>">Radera kurs</a>
+            </ul>
+            <% }); %>
+    </main>
+
+    <footer>
+        <p>Laborationsuppgift för kursen DT207G, Backend-baserad webbutveckling <br> &copy; Copyright Emma
+            Larsson,
+            2024
+        </p>
+    </footer>
 
 </body>
 

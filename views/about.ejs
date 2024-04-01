@@ -10,15 +10,36 @@
 
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="/">Startsida</a></li>
-            <li><a href="/add">Ny kurs</a></li>
-            <li><a href="/about">Om</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <div id="float">
+                <a href="/">Startsida</a>
+                <a href="/add">Ny kurs</a>
+                <a href="/about">Om</a>
+            </div>
+        </nav>
+    </header>
 
-    <h1>Om</h1>
+    <main>
+        <h1>Om</h1>
+        <p id="abouttext">På denna webbplats kan man lagra och visa kurser som man har läst. Informationen som går att
+            lagra om en kurs är kursnamn, kurskod, länt till kursplanen samt vilken progression kursen har. Det går även
+            att radera kurser från listan <br><br> För att skapa webbplatsen användes PostgreSQL som databasserver,
+            tillsammans med pgAdmin4 som administrationsverktyg. Webbplatsen publicerades via Render. <br><br> Det var
+            en väldigt rolig och lärorik uppgift. Innan denna kurs har jag mest arbetat med frontend. Så det har varit
+            roligt att lära sig en helt ny teknik för hur man kan lagra och visa data i en webbapplikation. Helt lätt
+            har det dock inte varit. Det har varit många nya tekniker och begrepp att lära sig. Men efter ett par
+            veckors jobb så kändes det som att bitar började falla på plats. Det ska bli spännande att få fortsätta
+            jobba med backend och utveckla kunskperna ytterligare.</p>
+    </main>
+
+    <footer>
+        <p>Laborationsuppgift för kursen DT207G, Backend-baserad webbutveckling <br> &copy; Copyright Emma
+            Larsson,
+            2024
+        </p>
+    </footer>
+
 </body>
 
 </html>

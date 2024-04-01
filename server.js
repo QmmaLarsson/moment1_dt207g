@@ -53,7 +53,7 @@ app.post("/add", async (req, res) => {
         [coursecode, coursename, courseurl, courseprogression]
     );
 
-    res.redirect("/");
+    res.redirect("/add");
 });
 
 //Radera sparad kurs
