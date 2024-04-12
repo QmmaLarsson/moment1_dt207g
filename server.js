@@ -42,6 +42,7 @@ app.get("/", async (req, res) => {
     });
 });
 
+//Spara kurs med hjälp av formulär
 app.post("/add", async (req, res) => {
     const coursecode = req.body.coursecode;
     const coursename = req.body.coursename;
