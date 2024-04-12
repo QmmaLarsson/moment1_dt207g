@@ -42,8 +42,8 @@
                                 <b>Progression:</b>
                                 <%= course.courseprogression %>
                                     <br><br>
+                                    <a class="deleteBtn" href="/delete/<%= course.id %>">Radera kurs</a>
                 </li>
-                <a class="deleteBtn" href="/delete/<%= course.id %>">Radera kurs</a>
             </ul>
             <% }); %>
     </main>
